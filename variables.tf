@@ -21,7 +21,7 @@ variable "containers" {
     default = {
       nginx = {
         name = "reverse-proxy-nginx"
-        image = "nginx:1.21.1"
+        image = "nginx:latest"
         ports = {
           internal = 80
           external = 1080
