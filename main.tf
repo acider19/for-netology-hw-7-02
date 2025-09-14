@@ -23,3 +23,10 @@ resource "docker_container" "wordpress" {
     external = var.containers.wordpress.ports.external
   }
 }
+resource "random_password" "uniq_name" {
+  length = 16
+}
+resource "local_file" "temp_junk" {
+  content = "project-${random_password.uniq_name.result}"
+  filename = "/tmp/temp_junk"
+}
